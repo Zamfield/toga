@@ -1,8 +1,8 @@
-from random import choice
 
 import toga
 from toga.style import Pack
 from toga.constants import ROW, COLUMN
+import secrets
 
 bee_movies = [
     {'year': 2008, 'title': 'The Secret Life of Bees', 'rating': '7.3', 'genre': 'Drama'},
@@ -25,7 +25,7 @@ class ExampleTreeApp(toga.App):
 
     # Button callback functions
     def insert_handler(self, widget, **kwargs):
-        item = choice(bee_movies)
+        item = secrets.choice(bee_movies)
         if item['year'] >= 2000:
             root = self.decade_2000s
         elif item['year'] >= 1990:

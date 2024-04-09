@@ -1,11 +1,11 @@
 import asyncio
-import random
 
 import toga
 from toga.constants import ROW, COLUMN
 from toga.style import Pack
 
 from .bot import Eliza
+import secrets
 
 
 class BeelizaApp(toga.App):
@@ -25,7 +25,7 @@ class BeelizaApp(toga.App):
         self.chat.scroll_to_bottom()
 
         # The partner needs to think about their response...
-        await asyncio.sleep(random.random() * 3)
+        await asyncio.sleep(secrets.SystemRandom().random() * 3)
 
         # ... and they respond
         response = self.partner.respond(input_text)
