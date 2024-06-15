@@ -9,8 +9,8 @@ if _debug_win32:
     _GetLastError = windll.kernel32.GetLastError
     _SetLastError = windll.kernel32.SetLastError
     _FormatMessageA = windll.kernel32.FormatMessageA
-
-    _log_win32 = open('debug_win32.log', 'w')
+    with open('debug_win32.log', 'w') as _log_win32:
+        pass
 
     def format_error(err):
         msg = create_string_buffer(256)
