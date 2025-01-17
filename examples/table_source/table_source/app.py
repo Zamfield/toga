@@ -1,9 +1,9 @@
-from random import choice
 
 import toga
 from toga.style import Pack
 from toga.constants import ROW, COLUMN
 from toga.sources import Source
+import secrets
 
 bee_movies = [
     ('The Secret Life of Bees', '2008', '7.3', 'Drama'),
@@ -90,7 +90,7 @@ class ExampleTableSourceApp(toga.App):
 
     # Button callback functions
     def insert_handler(self, widget, **kwargs):
-        self.table1.data.add(choice(bee_movies))
+        self.table1.data.add(secrets.choice(bee_movies))
 
     def delete_handler(self, widget, **kwargs):
         if len(self.table1.data) > 0:

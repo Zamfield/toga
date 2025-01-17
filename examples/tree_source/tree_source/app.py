@@ -1,9 +1,9 @@
-from random import choice
 
 import toga
 from toga.style import Pack
 from toga.constants import ROW, COLUMN
 from toga.sources import Source
+import secrets
 
 bee_movies = [
     {'year': 2008, 'title': 'The Secret Life of Bees', 'rating': '7.3', 'genre': 'Drama'},
@@ -84,7 +84,7 @@ class ExampleTreeSourceApp(toga.App):
 
     # Button callback functions
     def insert_handler(self, widget, **kwargs):
-        entry = choice(bee_movies)
+        entry = secrets.choice(bee_movies)
         self.tree.data.add(entry)
 
     def startup(self):
