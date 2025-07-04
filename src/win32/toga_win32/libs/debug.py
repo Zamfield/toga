@@ -10,8 +10,6 @@ if _debug_win32:
     _SetLastError = windll.kernel32.SetLastError
     _FormatMessageA = windll.kernel32.FormatMessageA
 
-    _log_win32 = open('debug_win32.log', 'w')
-
     def format_error(err):
         msg = create_string_buffer(256)
         _FormatMessageA(constants.FORMAT_MESSAGE_FROM_SYSTEM,
