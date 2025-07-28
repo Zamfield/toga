@@ -31,8 +31,8 @@
 # SOFTWARE.
 #
 #----------------------------------------------------------------------
-import random
 import re
+import secrets
 
 
 class Eliza:
@@ -403,7 +403,7 @@ class Eliza:
             if match:
                 # Found a match; randomly choose a response,
                 # and populate it with the captured regex group data.
-                response = random.choice(responses).format(*[
+                response = secrets.choice(responses).format(*[
                     self.reflect(group)
                     for group in match.groups()
                 ])
